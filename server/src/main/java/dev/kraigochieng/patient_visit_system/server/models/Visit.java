@@ -42,10 +42,10 @@ public class Visit {
     @Column(name = "weight")
     private Float weight;
 
-    @Transient
+    @Column(name = "bmi_value")
     private Float bmiValue;
 
-    @Transient
+    @Column(name = "bmi_status")
     private BMIStatus bmiStatus;
 
     @Column(name = "created_at")
@@ -55,7 +55,7 @@ public class Visit {
     private LocalDateTime updatedAt;
 
     public void calculateBmiValue() {
-        this.bmiValue = (float) (this.height / Math.pow((this.weight / 100), 2));
+        this.bmiValue = (float) (this.weight / Math.pow((this.height / 100), 2));
     }
     public void calculateBmiStatus() {
         if(this.bmiValue < 18.5) {
