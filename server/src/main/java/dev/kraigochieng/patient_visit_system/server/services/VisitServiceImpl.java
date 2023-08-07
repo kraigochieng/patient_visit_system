@@ -32,7 +32,9 @@ public class VisitServiceImpl implements VisitService {
         patient.getVisits().add(visit);
         // Add patent to the visit
         visit.setPatient(patient);
-
+        // Caluculate BMI Value and BMI status of visit
+        visit.calculateBmiValue();
+        visit.calculateBmiStatus();
         return visitRepository.save(visit);
     }
 }
