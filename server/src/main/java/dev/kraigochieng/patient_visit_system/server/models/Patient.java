@@ -1,5 +1,6 @@
 package dev.kraigochieng.patient_visit_system.server.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import dev.kraigochieng.patient_visit_system.server.enums.Gender;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -8,7 +9,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Set;
+import java.util.List;
 import java.util.UUID;
 
 @AllArgsConstructor
@@ -40,7 +41,8 @@ public class Patient {
     private LocalDateTime updatedAt;
 
     @OneToMany(mappedBy = "patient")
-    private Set<Visit> visits;
+    @JsonManagedReference
+    private List<Visit> visits;
 
     @PrePersist
     protected void onCreate() {
