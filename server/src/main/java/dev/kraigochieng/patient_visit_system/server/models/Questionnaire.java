@@ -1,5 +1,6 @@
 package dev.kraigochieng.patient_visit_system.server.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import dev.kraigochieng.patient_visit_system.server.enums.GeneralHealth;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -21,6 +22,7 @@ public class Questionnaire {
 
     @OneToOne
     @JoinColumn(name = "visit_id", referencedColumnName = "id")
+    @JsonBackReference
     private Visit visit;
 
     @Column(name = "general_health")

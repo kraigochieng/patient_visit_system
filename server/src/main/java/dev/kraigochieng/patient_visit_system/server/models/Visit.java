@@ -1,5 +1,7 @@
 package dev.kraigochieng.patient_visit_system.server.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import dev.kraigochieng.patient_visit_system.server.enums.BMIStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -22,9 +24,11 @@ public class Visit {
 
     @ManyToOne
     @JoinColumn(name = "patient_id", referencedColumnName = "id")
+    @JsonBackReference
     private Patient patient;
 
     @OneToOne(mappedBy = "visit")
+    @JsonManagedReference
     private Questionnaire questionnaire;
 
     @Column(name = "date_of_visit")
