@@ -28,8 +28,8 @@ public class Questionnaire {
     @Column(name = "general_health")
     private GeneralHealth generalHealth;
 
-    @Column(name = "on_diet_to_loose_weight")
-    private Boolean onDietToLooseWeight;
+    @Column(name = "on_diet_to_lose_weight")
+    private Boolean onDietToLoseWeight;
 
     @Column(name = "on_drugs")
     private Boolean onDrugs;
