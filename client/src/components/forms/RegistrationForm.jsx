@@ -36,17 +36,30 @@ export default function RegistrationForm() {
         <>
             <Link to="/patient-search"><button>Patient Already Exists?</button></Link>
             <form onSubmit={handleSubmit}>
-                <input type="text" name="firstName" value={registrationFormData.firstName} placeholder="First Name" onChange={handleChange}/>
-                <input type="text" name="lastName" value={registrationFormData.lastName} placeholder="Last Name" onChange={handleChange}/>
-                <input type="date" name="dateOfBirth" value={registrationFormData.dateOfBirth} placeholder="Date Of Birth" max={new Date().toISOString().split("T")[0]} onChange={handleChange}/>
-                {genders.map(gender => {
-                    return(
-                        <div key={gender}>
-                            <input type="radio" id={gender} name="gender" value={gender} checked={registrationFormData.gender === gender} onChange={handleChange}/>
-                            <label htmlFor={gender}>{gender}</label>
-                        </div>
-                    )
-                })}
+                <div>
+                    <label htmlFor="firstName">First Name</label>
+                    <input id="firstName" type="text" name="firstName" value={registrationFormData.firstName} placeholder="First Name" onChange={handleChange}/>
+                </div>
+                <div>
+                    <label htmlFor="lastName">Last Name</label>
+                    <input type="text" name="lastName" value={registrationFormData.lastName} placeholder="Last Name" onChange={handleChange}/>
+                </div>
+                <div>
+                    <label htmlFor="dateOfBirth">Date Of Birth</label>
+                    <input type="date" name="dateOfBirth" value={registrationFormData.dateOfBirth} placeholder="Date Of Birth" max={new Date().toISOString().split("T")[0]} onChange={handleChange}/>
+                </div>
+                <div>
+                    <label>Gender</label>
+                    {genders.map(gender => {
+                        return(
+                            <div key={gender}>
+                                <input type="radio" id={gender} name="gender" value={gender} checked={registrationFormData.gender === gender} onChange={handleChange}/>
+                                <label htmlFor={gender}>{gender}</label>
+                            </div>
+                        )
+                    })}
+                </div>
+
                 <button>Continue To Visit</button>
             </form>
 
