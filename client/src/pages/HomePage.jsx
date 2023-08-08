@@ -6,7 +6,7 @@ export default function HomePage() {
       <div id="menu">
         <Link to="/registration"><button>Add Patient</button></Link>
         <Link to="/patient-search"><button>Record Visit</button></Link>
-        <Link><button>Patient Listing</button></Link>
+        <Link to="/patient-listing"><button>Patient Listing</button></Link>
       </div>
     </div>
     
