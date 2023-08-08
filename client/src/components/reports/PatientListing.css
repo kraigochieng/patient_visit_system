@@ -1,0 +1,38 @@
+table, tr, td, th {
+    @apply
+        border
+        rounded
+        border-darkestBlue
+        border-collapse
+}
+
+table {
+    @apply
+        w-3/4
+        mx-auto
+}
+
+thead > tr {
+    @apply
+        bg-darkBlue
+        text-white
+}
+tbody > tr {
+    @apply
+    even:bg-lightestBlue
+    odd:bg-lightBlue
+}
+
+table {
+    @apply
+        rounded
+}
+
+#date-input-and-label-filter {
+    @apply
+        text-center
+        flex
+        gap-2
+        items-center
+        justify-center
+}

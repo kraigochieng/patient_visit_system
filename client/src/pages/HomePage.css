@@ -1,0 +1,13 @@
+#home-menu {
+    @apply py-4
+    grid
+    grid-cols-4
+    md:grid-cols-6
+    lg:grid-cols-8
+    gap-y-4
+    justify-items-center;
+}
+
+.home-menu-item {
+    @apply w-32 aspect-square;
+}

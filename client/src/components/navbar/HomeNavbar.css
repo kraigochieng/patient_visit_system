@@ -1,0 +1,21 @@
+.home-navbar {
+    @apply
+    p-2
+    flex
+    justify-between
+    items-center
+    bg-lightestBlue; 
+}
+
+#home-navbar-title {
+    @apply
+        text-3xl
+        md:text-5xl
+        lg:text-6xl
+        text-center
+        font-bold;
+}
+
+#home-navbar-title > a {
+    @apply  text-darkestBlue;
+}

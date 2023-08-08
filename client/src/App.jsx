@@ -1,13 +1,14 @@
-import './App.css'
 import RegistrationForm from './components/forms/RegistrationForm'
-import {Link, Routes, Route} from  "react-router-dom"
+import {Routes, Route} from  "react-router-dom"
 import HomePage from './pages/HomePage'
 import VisitForm from './components/forms/VisitForm'
 import PatientSearchForm from './components/forms/PatientSearchForm'
 import HomeNavbar from './components/navbar/HomeNavbar'
 import PatientListing from './components/reports/PatientListing'
-function App() {
+import "./App.css"
+import "./index.css"
 
+function App() {
   return (
     <Routes>
       <Route path="/" element={<HomeNavbar />}>

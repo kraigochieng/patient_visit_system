@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { server } from '../../axiosInstances'
-
+import "../reports/PatientListing.css"
 export default function PatientListing() {
 
    const [patients, setPatients] = useState([])
@@ -54,12 +54,16 @@ export default function PatientListing() {
     }
     return (
         <div>
+            <h3 class="sub-title">Patient Listing</h3>
             <form>
-                <input type="date" name="date" value={patientListingForm.date} onChange={handleChange} max={new Date().toISOString().split("T")[0]} />
+                <div class="input-with-label" id="date-input-and-label-filter">
+                    <label hmtlFor="date">Date</label>
+                    <input id="date" type="date" name="date" value={patientListingForm.date} onChange={handleChange} max={new Date().toISOString().split("T")[0]} />
+                </div>
             </form>
             {
                 patients.length === 0 ?
-                <p>No patients have been registered on {patientListingForm.date}</p>:
+                <p class="empty-info">No patients have been registered on {patientListingForm.date}</p>:
                 <table>
                     <thead>
                         <tr>

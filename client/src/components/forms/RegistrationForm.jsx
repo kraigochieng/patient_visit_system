@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { server } from "../../axiosInstances"
 import { Link, useNavigate } from "react-router-dom"
-
+import "../forms/RegistrationForm.css"
 export default function RegistrationForm() {
     const [genders, setGenders] = useState([])
     const navigate = useNavigate()
@@ -34,21 +34,22 @@ export default function RegistrationForm() {
 
     return (
         <>
+            <h3 id="patient-registration-title" class="sub-title">Patient Registration</h3>
             <Link to="/patient-search"><button>Patient Already Exists?</button></Link>
             <form onSubmit={handleSubmit}>
-                <div>
+                <div className="input-with-label">
                     <label htmlFor="firstName">First Name</label>
                     <input id="firstName" type="text" name="firstName" value={registrationFormData.firstName} placeholder="First Name" onChange={handleChange}/>
                 </div>
-                <div>
+                <div className="input-with-label">
                     <label htmlFor="lastName">Last Name</label>
                     <input type="text" name="lastName" value={registrationFormData.lastName} placeholder="Last Name" onChange={handleChange}/>
                 </div>
-                <div>
+                <div className="input-with-label">
                     <label htmlFor="dateOfBirth">Date Of Birth</label>
                     <input type="date" name="dateOfBirth" value={registrationFormData.dateOfBirth} placeholder="Date Of Birth" max={new Date().toISOString().split("T")[0]} onChange={handleChange}/>
                 </div>
-                <div>
+                <div className="input-with-label">
                     <label>Gender</label>
                     {genders.map(gender => {
                         return(

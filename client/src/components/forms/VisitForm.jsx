@@ -78,21 +78,21 @@ export default function VisitForm() {
 
   return (
     <>
-    <h1>Visit Record</h1>
+    <h1 class="sub-title">Visit Record</h1>
     <div>
-      <h2>Patient Details</h2>
+      <h4>Patient Details</h4>
       <p>First Name: {patientDetails.firstName}</p>
       <p>Last Name: {patientDetails.lastName}</p>
       <p>Gender: {`${patientDetails.gender.charAt(0)}${patientDetails.gender.slice(1).toLowerCase()}`}</p>
       <p>Date Of Birth: {patientDetails.dateOfBirth}</p>
     </div>
       <form onSubmit={handleSubmit}>
-        <h2>Visit Form</h2>
-        <div>
+        <h4>Visit Form</h4>
+        <div className="input-with-label">
           <label htmlFor="">Height&#40;cm&#41;</label>
           <input type="number" id="height" name="height" value={visitFormData.height} onChange={handleChange} placeholder="Height(cm)" inputMode="numeric" min="0" />
         </div>
-        <div>
+        <div className="input-with-label">
           <label htmlFor="weight">Weight&#40;kg&#41;</label>
           <input type="number" id="weight" name="weight" value={visitFormData.weight} onChange={handleChange} placeholder="Weight(kg)" inputMode="numeric" min="0" />
         </div>
@@ -100,7 +100,7 @@ export default function VisitForm() {
         {
           !isNaN(BMI) && BMI != 0 &&
           <>
-            <div>
+            <div className="input-with-label">
               <label htmlFor="BMI">BMI</label>
               <input id="BMI" disabled value={BMI} />
             </div>

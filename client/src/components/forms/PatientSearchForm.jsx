@@ -5,8 +5,6 @@ export default function PatientSearchForm() {
     const navigate = useNavigate()
     const [patients, setPatients] = useState([])
 
-    const [filteredPatients, setFilteredPatients] = useState([])
-
     const [patientSearchForm, setPatientSearchForm] = useState({
         name: ""
     })
@@ -45,8 +43,12 @@ export default function PatientSearchForm() {
     
     return (
         <>
+            <h3 class="sub-title">Patient Search</h3>
             <form>
-                <input type="text" name="name" value={patientSearchForm.name} placeholder="Any Patient Name" onChange={handleChange}/>
+                <div className="input-with-label">
+                    <label htmlFor="name">Patient Search</label>
+                    <input id="name"type="text" name="name" value={patientSearchForm.name} placeholder="Any Patient Name" onChange={handleChange}/>
+                </div>
             </form>
             {
                 (() => {

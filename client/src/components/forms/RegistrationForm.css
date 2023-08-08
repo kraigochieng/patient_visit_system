@@ -1,0 +1,6 @@
+#patient-registration-title {
+    @apply
+        text-center
+        bg-darkestBlue
+        text-lightBlue;
+}
