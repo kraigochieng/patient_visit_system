@@ -34,6 +34,9 @@ public class Patient {
     @Column(name = "gender")
     private Gender gender;
 
+    @Column(name = "registeredAt")
+    private LocalDate registeredAt;
+
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
@@ -47,6 +50,7 @@ public class Patient {
     @PrePersist
     protected void onCreate() {
         this.createdAt = LocalDateTime.now();
+        this.registeredAt = LocalDate.now();
     }
 
     @PreUpdate
