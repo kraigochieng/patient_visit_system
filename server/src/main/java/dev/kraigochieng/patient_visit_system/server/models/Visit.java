@@ -16,7 +16,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Data
 @Table(name = "visit")
-@Entity(name = "visit")
+@Entity(name = "Visit")
 public class Visit {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -70,6 +70,7 @@ public class Visit {
     @PrePersist
     protected void onCreate() {
         this.createdAt = LocalDateTime.now();
+        this.dateOfVisit = LocalDate.now();
     }
 
     @PreUpdate
