@@ -26,7 +26,6 @@ public class VisitController {
 
     @PostMapping(path = "post/{patientId}")
     public  ResponseEntity<Visit> postVisit(@RequestBody Visit visit, @PathVariable UUID patientId) {
-        System.out.println(patientId.toString());
         return ResponseEntity
                 .status(HttpStatus.CREATED)
                 .body(visitServiceImpl.postVisit(visit, patientId));
