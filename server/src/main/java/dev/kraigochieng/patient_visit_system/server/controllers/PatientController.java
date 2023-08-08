@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -23,6 +24,12 @@ public class PatientController {
                 .body(patientServiceImpl.getPatients());
     }
 
+    @GetMapping(path = "get/registrationDate/{registrationDateAsString}")
+    public ResponseEntity<List<Patient>> getPatientsByRegistrationDate(@PathVariable String registrationDateAsString) {
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(patientServiceImpl.getPatientsByRegistrationDate(registrationDateAsString));
+    }
     @PostMapping(path = "post")
     public  ResponseEntity<Patient> postPatient(@RequestBody Patient patient) {
         return ResponseEntity
