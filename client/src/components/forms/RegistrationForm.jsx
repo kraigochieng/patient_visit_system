@@ -23,7 +23,6 @@ export default function RegistrationForm() {
         const {name, value, type, checked} = event.target
         setRegistrationFormData(prevRegistrationFormData => ({
             ...prevRegistrationFormData,
-            // [name]: type === "checkbox" ? checked : type === "date" ? value.toISOString().split("T")[0] : value
             [name]: type === "checkbox" ? checked : value
         }))
     }
