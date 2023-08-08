@@ -40,7 +40,6 @@ export default function VisitForm() {
     patient: {},
     height: "",
     weight: "",
-    dateOfVisit: new Date().toISOString().split("T")[0],
     generalHealth: "",
     onDrugs: "",
     onDietToLoseWeight: "",
@@ -51,7 +50,6 @@ export default function VisitForm() {
   useEffect(() => {
     setBMI((visitFormData.weight / ((visitFormData.height /100) ** 2)).toFixed(1))
   }, [visitFormData.height, visitFormData.weight])
-
 
   async function handleSubmit(event) {
     event.preventDefault()
@@ -90,10 +88,6 @@ export default function VisitForm() {
     </div>
       <form onSubmit={handleSubmit}>
         <h2>Visit Form</h2>
-        <div>
-          <label htmlFor="dateOfBirth">Date Of Visit</label>
-          <input type="date" id="dateOfBirth" name="dateOfVisit" value={visitFormData.dateOfVisit} onChange={handleChange} max={new Date().toISOString().split("T")[0]} />
-        </div>
         <div>
           <label htmlFor="">Height&#40;cm&#41;</label>
           <input type="number" id="height" name="height" value={visitFormData.height} onChange={handleChange} placeholder="Height(cm)" inputMode="numeric" min="0" />
