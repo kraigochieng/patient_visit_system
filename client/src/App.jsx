@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage'
 import VisitForm from './components/forms/VisitForm'
 import PatientSearchForm from './components/forms/PatientSearchForm'
 import HomeNavbar from './components/navbar/HomeNavbar'
+import PatientListing from './components/reports/PatientListing'
 function App() {
 
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="registration" element={<RegistrationForm />} />
         <Route path="patient-search" element={<PatientSearchForm/> } />
         <Route path="visit" element={<VisitForm/>} />
+        <Route path="patient-listing" element={<PatientListing />} />
       </Route>
     </Routes>
   )
