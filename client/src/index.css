@@ -1,0 +1,13 @@
+
+* {
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+}
+
+input:disabled {
+    color: black;
+    border: solid 1px #8f8f9d;
+}
+input {
+    padding: 4px;
+}
