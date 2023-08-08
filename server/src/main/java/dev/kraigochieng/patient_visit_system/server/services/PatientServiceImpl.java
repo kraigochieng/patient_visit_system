@@ -5,6 +5,7 @@ import dev.kraigochieng.patient_visit_system.server.repositories.PatientReposito
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 @Service
 public class PatientServiceImpl implements PatientService{
@@ -18,5 +19,11 @@ public class PatientServiceImpl implements PatientService{
     @Override
     public Patient postPatient(Patient patient) {
         return patientRepository.save(patient);
+    }
+
+    @Override
+    public List<Patient> getPatientsByRegistrationDate(String registrationDateAsString) {
+        LocalDate registrationDate = LocalDate.parse(registrationDateAsString);
+        return patientRepository.getPatientsByRegistrationDate(registrationDate);
     }
 }
